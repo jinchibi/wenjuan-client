@@ -26,12 +26,10 @@ export default async function handler(
         res.status(200).json({errno: -1, msg: "Method 错误"})
     // 处理数据
     const answerInfo = genAnswerInfo(req.body)
-
+    console.log(answerInfo)
     try {
         // 提交到服务端(Mock)
         const result: any = await postAnswer(answerInfo)
-        console.log(1)
-        console.log(result)
         if (result.errno === 0) {
             // 提交成功，跳转到成功页面
             res.redirect("/success")
@@ -42,5 +40,4 @@ export default async function handler(
     } catch (err) {
 
     }
-    // res.status(200).json({errno: 0})
 }

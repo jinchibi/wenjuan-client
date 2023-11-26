@@ -1,13 +1,12 @@
 import Image from 'next/image'
 import {Inter} from 'next/font/google'
+import PageWrapper from "@/components/PageWrapper";
 
 export default function Success() {
     return (
-        <main
-            // className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-        >
-            <h1>失败</h1>
-            <div>提交失败</div>
-        </main>
+        <PageWrapper title={"提交失败"}>
+            <h1>提交失败</h1>
+            <button>点击返回</button>
+        </PageWrapper>
     )
 }
